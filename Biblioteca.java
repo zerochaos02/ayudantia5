@@ -10,6 +10,33 @@ public class Biblioteca {
 	private Vector<Multa> multas = new Vector<Multa>();
 	private Vector<Categoria> categorias = new Vector<Categoria>();
 
+	public static void main(String[] args) {
+		Biblioteca biblioteca = new Biblioteca();
+		biblioteca.nombre = "Biblioteca Central";
+		biblioteca.direccion = "Calle Principal 123";
+
+		// Crear y agregar un libro
+		Libro libro = new Libro("El Quijote", "Miguel de Cervantes", "Clásicos", true);
+		biblioteca.agregarLibro(libro);
+
+		// Crear y agregar un usuario
+		Usuario usuario = new Usuario("Juan Pérez", "Calle Secundaria 456", new Vector<Prestamo>());
+		biblioteca.usuarios.add(usuario);
+
+		// Realizar un préstamo
+		biblioteca.realizarPrestamo(usuario, libro);
+
+		// Generar una multa
+		biblioteca.generarMulta(usuario, 50.0);
+
+		// Mostrar información
+		System.out.println("Nombre de la biblioteca: " + biblioteca.nombre);
+		System.out.println("Dirección de la biblioteca: " + biblioteca.direccion);
+		System.out.println("Libros en la biblioteca: " + biblioteca.libros.size());
+		System.out.println("Usuarios en la biblioteca: " + biblioteca.usuarios.size());
+		System.out.println("Multas generadas: " + biblioteca.multas.size());
+	}
+
 	// Métodos para gestión de libros
 	public void agregarLibro(Libro libro) {
 		libros.add(libro);

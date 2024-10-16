@@ -10,4 +10,10 @@ public class Usuario {
 	public Vector<Prestamo> getPrestamos() {
 		return prestamos;
 	}
+
+	public Usuario(String nombre, String direccion, Vector<Prestamo> prestamos) {
+		this.nombre = nombre;
+		this.direccion = direccion;
+		this.prestamos = prestamos;
+	}
 }

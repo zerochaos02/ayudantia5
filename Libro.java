@@ -15,4 +15,11 @@ public class Libro {
 	public void setDisponible(boolean disponible) {
 		this.disponible = disponible;
 	}
+
+	public Libro(String titulo, String autor, String categoria, boolean disponible) {
+		this.titulo = titulo;
+		this.autor = autor;
+		this.categoria = categoria;
+		this.disponible = disponible;
+	}
 }
